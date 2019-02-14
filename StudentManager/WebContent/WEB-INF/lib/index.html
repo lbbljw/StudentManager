@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<title>基于 EasyHelper 的分页</title>
+		<link rel="stylesheet" href="css/easyhelper.min.css">
+		<style>
+			.title {
+				text-align: center;
+				font-size: 24px;
+				margin-top: 50px;
+			}
+			.content {
+				margin: 30px auto;
+				width: 1000px;
+				height: 409px;
+				border: #dfdfdf solid 1px;
+				overflow: hidden;
+			}
+			.content li {
+				display: block;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 14px;
+				border-bottom: #e8e8e8 solid 1px;
+			}
+			.page {
+				text-align: center;
+				margin-bottom: 200px;
+			}
+		</style>
+	</head>
+	<body>
+	    
+	    <p class="title">基础版分页</p>
+		<div class="content">
+			<ul>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+		</div>
+		<div class="page" id="page-1"></div>
+
+
+		<p class="title">显示总数据量</p>
+		<div class="content">
+			<ul>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+		</div>
+		<div class="page" id="page-2"></div>
+
+
+		<p class="title">显示总数据量和跳转快捷方式</p>
+		<div class="content">
+			<ul>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+		</div>
+		<div class="page" id="page-3"></div>
+
+
+		<p class="title">默认处于指定页码</p>
+		<div class="content">
+			<ul>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+		</div>
+		<div class="page" id="page-4"></div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.transit.min.js"></script>
+		<script src="js/es6-shim.min.js"></script>
+		<script src="js/easyhelper.min.js"></script>
+		<script>
+
+			// 本地模拟的内容生成函数
+			var $content = $( ".content" );
+			function createContent ( i, index ) {
+				$content.eq( index ).empty().html( ('<li>' + i + '</li>').repeat(10) );
+			}
+
+			// 调用分页功能 [ 基础版 ]
+			Helper.ui.page("#page-1", {
+				total: 2000,
+				pageSize: 10,
+				change: function ( i ) {
+					createContent( i, 0 );
+				}
+			});
+			Helper.ui.page("#page-2", {
+				total: 2000,
+				pageSize: 10,
+				showTotal: true,
+				change: function ( i ) {
+					createContent( i, 1 );
+				}
+			});
+			Helper.ui.page("#page-3", {
+				total: 2000,
+				pageSize: 10,
+				showTotal: true,
+				showTo: true,
+				change: function ( i ) {
+					createContent( i, 2 );
+				}
+			});
+			Helper.ui.page("#page-4", {
+				total: 2000,
+				pageSize: 10,
+				showTotal: true,
+				showTo: true,
+				currentPage: 25,
+				change: function ( i ) {
+					createContent( i, 3 );
+				}
+			});
+
+		</script>
+	</body>
+</html>

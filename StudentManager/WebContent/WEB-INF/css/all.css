@@ -1,0 +1,46 @@
+  body{
+    text-align: center;
+  }
+  .all{
+    width:40%;
+    margin: 20px 100px;
+    text-align: center;
+    height: 300px;
+    float: left;
+    text-align: left;
+  }
+  table{
+    width: 80%;
+    margin: 20px auto;
+    font-size: 14px;
+    overflow: auto;
+  }
+  table tr,table td{
+    border-bottom: 1px #000 solid;
+    line-height: 23px;
+  }
+  #edit_comm{
+    width: 500px;
+    margin: 20px auto;
+    border-left: 3px solid #000;
+    <!-- display: none;-->
+  }
+  #add_comm{
+    width: 500px;
+    height:300px;
+    margin: 20px auto;
+    border-left: 3px solid #000;
+  }
+  #all_comm{
+    height:600px;
+  }
+  .edit_stu{
+    width: 500px;
+    height: 30px;
+    background: #fff;
+    font-family: "Times New Roman",Georgia,Serif;
+    font-size: 18px;
+    border: none;
+    border-bottom: 3px solid #000;
+    margin: 20px 10px;
+  }
